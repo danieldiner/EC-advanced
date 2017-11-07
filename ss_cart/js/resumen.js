@@ -113,7 +113,7 @@ var app = {
 		            "description":"Compra desde Geenius Store"
 		          };
 
-		         // Set up the data you need to pass to your server
+		        //Configurar los datos que se pasarán al servidor
 		        var dataArray = {
 		        	transactions: JSON.stringify(transactionsArray)
 		        };
@@ -131,22 +131,22 @@ var app = {
   				
   				console.dir(data);
 
-	         	// Set up the data you need to pass to your server
+	         	//Configurar los datos que se pasarán al servidor
 		        var dataArray = {
 		            paymentID: data.paymentID,
 		            payerID: data.payerID
 		        };
 	          
 	          	return paypal.request.post(EXECUTE_PAYMENT_URL, dataArray).then(function() {
-	             	alert("Payment complete!")
+	             	alert("¡Pago Completado! Gracias por su compra, vuelva pronto.")
 
 
 			        localStorage.removeItem("cartArray");
 
 			        window.location = "index.php";
 
-	             	// The payment is complete!
-	             	// You can now show a confirmation message to the customer
+	             	// El pago se ha completado
+              		// Puede mostrar un mensaje de confirmación al comprador
 		        },function(error) {
 		            console.log("Error: " + error);
 		        });

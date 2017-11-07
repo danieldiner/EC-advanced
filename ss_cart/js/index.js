@@ -87,7 +87,7 @@ var app = {
 
 	        		// save cart in local storage (array must be stringified before being saved)
 	        		localStorage.setItem("cartArray",JSON.stringify(cartArray));
-
+					alert("Artículo agregado al carrito.");
 	        	} else {
 
 	        		// cartArray does NOT exist yet
@@ -109,6 +109,7 @@ var app = {
 
 	        		// save cart in local storage (array must be stringified before being saved)
 	        		localStorage.setItem("cartArray",JSON.stringify(cartArray));
+	        		alert("Artículo agregado al carrito.");
 	        	}
 
 	        } else {

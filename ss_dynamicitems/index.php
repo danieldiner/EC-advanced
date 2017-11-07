@@ -10,12 +10,6 @@
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
   </head>
@@ -33,13 +27,6 @@
           </button>
           <a class="navbar-brand" href="#">Geenius Store</a>
         </div>
-        <!-- <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div> -->
       </div>
     </nav>
 
@@ -113,7 +100,7 @@
                       "description":"Compra desde Geenius Store"
                     };
 
-                    // Set up the data you need to pass to your server
+                    //Configurar los datos que se pasarán al servidor
                     var dataArray = {
                       transactions: JSON.stringify(transactionsArray)
                     };
@@ -131,16 +118,16 @@
                       
                       console.dir(data);
 
-                      // Set up the data you need to pass to your server
+                      //Configurar los datos que se pasarán al servidor
                       var dataArray = {
                           paymentID: data.paymentID,
                           payerID: data.payerID
                       };
                       
                       return paypal.request.post(EXECUTE_PAYMENT_URL, dataArray).then(function() {
-                          alert("Payment complete!")
-                          // The payment is complete!
-                          // You can now show a confirmation message to the customer
+                          alert("¡Pago Completado! Gracias por su compra, vuelva pronto.")
+                          // El pago se ha completado
+                          // Puede mostrar un mensaje de confirmación al compradoromer
                       },function(error) {
                           console.log("Error: " + error);
                       });
